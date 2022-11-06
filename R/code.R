@@ -64,6 +64,7 @@ df_pred <- data.frame(x_pred, y_pred)
 p <- ggplot(data=df, aes(years, Ratio1_t1)) +
   geom_point() +
   geom_line(data=df_pred, aes(x_pred, y_pred))
+ggsave(here("outputs", "pred.png"))
 
 ## Time to reach 100%
 year_ratio100 <- round(exp((log(100) - c - a) / b))
